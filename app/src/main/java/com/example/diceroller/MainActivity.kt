@@ -27,33 +27,38 @@ class MainActivity : ComponentActivity() {
                 DiceRollerApp()
             }
 
+        }
+    }
+
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
+
+
+    @Composable
+    fun DiceRollerApp() {
+        DiceWithButtonAndImage(
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+        )
+    }
+
+    @Composable
+    fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+        Column(
+            modifier = modifier,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Button(onClick = { /*TODO*/ }) {
+                Text(stringResource(R.string.roll))
+            }
+        }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DiceRollerApp() {
-    DiceWithButtonAndImage(
-        modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center)
-    )
-
-@Composable
-fun DiceWithButtonAndImage(modifier: Modifier = Modifier ) {
-    Column(
-        modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {  Button(onClick = { /*TODO*/ }) {
-                    Text(stringResource(R.string.roll))
-                }
-}
 
